@@ -13,15 +13,53 @@
   }
 }
 
+h1 {
+  font-size: 93px;
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-size: 30px;
+  max-width: 520px;
+  margin: 0 0;
+  margin-bottom: 22px;
+  font-weight: 400;
+}
+
+button {
+  background-color: transparent;
+  border-width: 0;
+  padding: 0;
+  background-color: #403B3B;
+}
+
+a {
+  all: unset;
+}
+
+.btn {
+  color: white;
+  background: #403B3B;
+  box-shadow: 0px 64px 95.85px rgba(58, 58, 58, 0.2);
+  border-radius: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 36px;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
