@@ -14,23 +14,6 @@
     flex-direction: column;
 }
 
-.back-btn {
-    all: unset;
-    position: fixed;
-    left: 80px;
-    top: 70px;
-    color: black;
-    border: 1px solid #2C3434;
-    filter: drop-shadow(0px 64px 95.85px rgba(58, 58, 58, 0.2));
-    border-radius: 100px;
-    padding: 5px 15px;
-    font-size: 13px;
-}
-
-/* .back-txt {
-    margin-left: 5px;
-} */
-
 .score-container {
     color: white;
     background-color: #34882C;
@@ -49,11 +32,13 @@
     color: black;
     font-size: 20px;
     height: 170px;
-    width: 500px;
+    width: 450px;
     overflow-wrap: break-word;
     border-radius: 50px;
     grid-row: 1/2;
-    margin: 20px 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-right: 30px;
 }
 
 .meal-row {
@@ -69,32 +54,42 @@ h1 {
 }
 
 .your-food-txt {
-    margin-top: 75px;
+    margin-top: 70px;
     font-size: 30px;
 }
 
-.food-grid-container {
 
+.food-summary-section {
+    display: flex;
+    flex-direction: column;
+    /* margin-bottom: 10px; */
 }
-.food-row {
-    display: grid;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-.food-grid {
+
+.food-summary-container {
     background-color: white;
     box-shadow: 0px 10px 20px rgba(58, 58, 58, 0.2);
     border-radius: 25px;
-    height: 200px;
-    width: 360px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    grid-row: 1/2;
+    min-height: 100px;
+    width: 700px;
+    margin-bottom: 20px;
+    display: grid
 }
 
-.food-txt {
-    font-size: 50px;
+.food-summary {
+    margin: 20px 20px;
+}
+
+.food-title {
+    all: unset;
+    display: block;
+    font-size: 22px;
+    font-weight: 700px;
+    margin-bottom: 10px;
+}
+
+.fa-chevron-right {
+    margin-right: 3px;
+    -webkit-text-stroke: 2px white;
 }
 
 
@@ -108,11 +103,16 @@ h1 {
     background-color: white;
     box-shadow: 0px 10px 20px rgba(58, 58, 58, 0.2);
     border-radius: 25px;
-    height: 200px;
+    min-height: 200px;
     width: 700px;
     margin-bottom: 20px;
 }
 
 .article-summary {
     margin: 20px 20px;
+}
+
+.article-title {
+    margin-bottom: 10px;
+    
 }

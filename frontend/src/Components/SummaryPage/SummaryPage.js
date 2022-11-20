@@ -1,56 +1,60 @@
-// import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import MainTopbar from '../MainTopbar/MainTopbar';
 import './SummaryPage.css';
 
 const SummaryPage = () => {
-    // const navigate = useNavigate();
-    // const goBack = () => {
-    //     navigate(-1);
-    // }
+    const location = useLocation();
+    const ingredientInfo = location.state.ingredientInfo;
+    const mealInfo = location.state.mealInfo;
+
+
+    const mealHTML = () => {
+        return (
+            <div className="meal-row">
+                        <div className="score-container">
+                            <div className="score">{mealInfo.score}</div>
+                        </div>
+                        <div className="summary-container">
+                            <div className="summary">
+                                {mealInfo.info}
+                            </div>
+                        </div>
+            </div>
+        ); 
+    }
+
+    const foodsHTML = ingredientInfo.map((food, index) => {
+        return (
+            <div key={index} className="food-summary-container">
+                <div className="food-summary">
+                    <h2 className="food-title">
+                    <i className="fa-solid fa-chevron-right"></i> {food.name}
+                    </h2>
+                    {food.info}
+                </div>
+            </div>
+        );
+    })
+
+    
     return (
         <>
             <MainTopbar></MainTopbar>
-            {/* <button className="back-btn" onClick={goBack}><i class="fa-solid fa-chevron-left"></i><span class="back-txt">Back</span></button> */}
             <div className='summary-page-container'>
                 <div className="sub-container">
                     <h1>Meal score</h1>
-                    <div className="meal-row">
-                        <div className="score-container">
-                            <div className="score">88</div>
-                        </div>
-                        <div className="summary-container">
-                            <div className="summary">this is why no one loves you this is why no one loves you this is why no one loves you this is why no one loves you </div>
-                        </div>
-                    </div>
+                    {mealHTML()}
 
 
                     
-                    <h1 className="your-food-txt">Your meal, at a glance</h1>
-                    <div className="food-grid-container">
-                        <div className="food-row">
-                            <div className="food-grid">
-                                <div className="food-txt">kale</div>
-                            </div>
-                            <div className="food-grid">
-                                <div className="food-txt">kale</div>
-                            </div>
-                        </div>
+                    <h1 className="your-food-txt">Your food, at a glance</h1>
+                    
+                    <div className="food-summary-section">
 
-                        <div className="food-row">
-                            <div className="food-grid">
-                                <div className="food-txt">kale</div>
-                            </div>
-                            <div className="food-grid">
-                                <div className="food-txt">kale</div>
-                            </div>
-                        </div>
-
-                        <div className="food-row">
-                            <div className="food-grid">
-                                <div className="food-txt">kale</div>
-                            </div>
-                        </div>
+                        {foodsHTML}
+            
                     </div>
+
 
 
 
@@ -60,7 +64,7 @@ const SummaryPage = () => {
                         <div className="article-summary-container">
                             <div className="article-summary">
                                 <h2 className="article-title">
-                                    Goddamn I'm such a good cs student holy fuck
+                                <i className="fa-solid fa-chevron-right"></i> Goddamn I'm such a good cs student holy fuck
                                 </h2>
                                 A compiler is a tool that takes code as input and produces error messages. As a side-effect, it may produce an executable.
                                 A compiler is a tool that takes code as input and produces error messages. As a side-effect, it may produce an executable.
@@ -71,7 +75,7 @@ const SummaryPage = () => {
                         <div className="article-summary-container">
                             <div className="article-summary">
                                 <h2 className="article-title">
-                                    Goddamn I'm such a good cs student holy fuck
+                                <i className="fa-solid fa-chevron-right"></i> Goddamn I'm such a good cs student holy fuck
                                 </h2>
                                 A compiler is a tool that takes code as input and produces error messages. As a side-effect, it may produce an executable.
                                 A compiler is a tool that takes code as input and produces error messages. As a side-effect, it may produce an executable.
@@ -79,6 +83,7 @@ const SummaryPage = () => {
                             </div>
                         </div>
                         
+
                     </div>
                 </div>
 

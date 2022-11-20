@@ -53,10 +53,21 @@ const AddPage = () => {
 
     const handleCompute = () => {
         if (foods.length > 0) {
-            console.log('gottem!');
+            const ingredientInfo = [
+                {name: 'kale1', info: `A compiler is a tool that takes code as input and produces error messages. As a side-effect, it may produce an executable.
+                A compiler is a tool that takes code as input`},
+                {name: 'kale2', info: `A compiler is a tool that takes code as input and produces error messages. As a side-effect, it may produce an executable.
+                A compiler is a tool that takes code as input`},
+                {name: 'kale3', info: `A compiler is a tool that takes code as input and produces error messages. As a side-effect, it may produce an executable.
+                A compiler is a tool that takes code as input`},
+                {name: 'kale4', info: `A compiler is a tool that takes code as input and produces error messages. As a side-effect, it may produce an executable.
+                A compiler is a tool that takes code as input`},
+            ];
+            const mealInfo = {score: 99, info: `A compiler is a tool that takes code as input and produces error messages. As a side-effect, it may produce an executable.
+            A compiler is a tool that takes code as input`};
+            navigate('/summary', {state: {ingredientInfo,  mealInfo}});
             setFoods([]);
             setNewFood('');
-            navigate('/summary');
         }
     }
 
