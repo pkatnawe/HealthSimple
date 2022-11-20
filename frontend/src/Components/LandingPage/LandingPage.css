@@ -14,13 +14,13 @@
   }
   
   .landing-title {
-    font-size: 93px;
+    font-size: 80px;
     margin-bottom: 12px;
   }
   
   .landing-sub-title {
-    font-size: 30px;
-    max-width: 520px;
+    font-size: 25px;
+    max-width: 480px;
     margin: 0 0;
     margin-bottom: 22px;
     font-weight: 400;
@@ -46,10 +46,11 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 18px 36px;
+    padding: 15px 15px;
     gap: 10px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
+    margin-top: 5px;
   }
   
   .App-header {

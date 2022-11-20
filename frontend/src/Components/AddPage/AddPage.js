@@ -1,15 +1,36 @@
 import './AddPage.css'
 import MainTopbar from '../MainTopbar/MainTopbar';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const AddPage = () => {
     const [foods, setFoods] = useState([]);
     const [newFood, setNewFood] = useState('');
+    const navigate = useNavigate();
 
+    const placeholder = () => {
+        if (foods.length === 0) {
+            return (
+                <div style={{display: 'flex'}}>
+                    <div className='food-item-temp'>Eggs 
+                        <button className='delete-btn-temp'><i className="fa-solid fa-x"></i></button>
+                    </div>
+                    <div className='food-item-temp'>Pork 
+                        <button className='delete-btn-temp'><i className="fa-solid fa-x"></i></button>
+                    </div>
+                    <div className='food-item-temp'>Banana 
+                        <button className='delete-btn-temp'><i className="fa-solid fa-x"></i></button>
+                    </div>
+                </div>
+                
+            );
+        }
+    }
     const handleDelete = (index) => {
         const newFoods = foods.filter((_, i) => i !== index);
-        setFoods(newFoods);
+        setFoods(newFoods); 
     }
+
 
     const foodsHTML = foods.map((food, index) => {
             return (
@@ -35,6 +56,7 @@ const AddPage = () => {
             console.log('gottem!');
             setFoods([]);
             setNewFood('');
+            navigate('/summary');
         }
     }
 
@@ -57,6 +79,7 @@ const AddPage = () => {
                     </div>
                     <div className="food-list-container">
                         <div className="food-flex-container">
+                            {placeholder()}
                             {foodsHTML}
                         </div>
                         <button className='compute-btn' onClick={handleCompute}>Compute</button>

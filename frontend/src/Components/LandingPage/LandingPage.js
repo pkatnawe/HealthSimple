@@ -19,7 +19,8 @@ const Landing = () => {
         <header className="App-header">
           <Topbar></Topbar>
           <h1 className="landing-title">Do health right</h1>
-          <h3 className="landing-sub-title">Search your ingredients and such and get your health info.</h3>
+          {/* <h3 className="landing-sub-title">Search your ingredients and get to know your health better.</h3> */}
+          <h3 className="landing-sub-title">Start learning about your health, one ingredient at a time.</h3>
           <Link className="btn" to="/add">
             Get started
           </Link>

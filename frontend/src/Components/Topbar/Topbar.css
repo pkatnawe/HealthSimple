@@ -17,6 +17,7 @@
 }
 
 .top-btn {
+    all: unset;
     color: white;
     background: #403B3B;
     /* box-shadow: 0px 64px 95.85px rgba(58, 58, 58, 0.2); */
@@ -25,8 +26,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 15px 23px;
-    font-size: 15px;
+    padding: 11px 21px;
+    font-size: 14px;
     margin-left: auto;
     margin-top: 15px;
     margin-bottom: 15px;
