@@ -5,11 +5,11 @@ from nutrition import *
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/')
+@app.route('/',methods=["GET"])
 def home():
     return "Server is running"
 
-@app.route('/api/<foods>')
+@app.route('/api/<foods>',methods=["GET"])
 def get_foods(foods):
     data = foods #example this is a food string
     #turning into array cause this is scuffed
@@ -17,7 +17,7 @@ def get_foods(foods):
     summaries = web_scraper(food_array)
     return summaries
 
-@app.route('/api/score/<foods>')
+@app.route('/api/score/<foods>',methods=["GET"])
 def get_score(foods):
     data = foods 
     food_array = data.split('+')
