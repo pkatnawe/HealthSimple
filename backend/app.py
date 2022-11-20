@@ -6,10 +6,12 @@ app = Flask(__name__)
 CORS(app)
 
 @app.route('/',methods=["GET"])
+@cross_origin()
 def home():
     return "Server is running"
 
 @app.route('/api/<foods>',methods=["GET"])
+@cross_origin()
 def get_foods(foods):
     data = foods #example this is a food string
     #turning into array cause this is scuffed
@@ -17,7 +19,8 @@ def get_foods(foods):
     summaries = web_scraper(food_array)
     return summaries
 
-@app.route('/api/score/<foods>',methods=["GET"])
+@app.route('/api/score/<foods>', methods=["GET"])
+@cross_origin()
 def get_score(foods):
     data = foods 
     food_array = data.split('+')
@@ -25,7 +28,8 @@ def get_score(foods):
     return data
 
 
-@app.route('/api/data/<foods>')
+@app.route('/api/data/<foods>', methods=["GET"])
+@cross_origin()
 def get_api(foods):
     data = foods 
     food_array = data.split('+')
