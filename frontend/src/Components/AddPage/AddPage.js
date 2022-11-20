@@ -52,7 +52,7 @@ const AddPage = () => {
     }
 
     const handleCompute = () => {
-        if (foods) {
+        if (foods.length > 0) {
             console.log('gottem!');
             setFoods([]);
             setNewFood('');

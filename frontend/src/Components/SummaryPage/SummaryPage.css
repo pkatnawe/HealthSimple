@@ -1,0 +1,118 @@
+.summary-page-container {
+    min-height: 200vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #F5F5F5;
+}
+
+.sub-container {
+    min-width: 700px;
+    margin-top: 100px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.back-btn {
+    all: unset;
+    position: fixed;
+    left: 80px;
+    top: 70px;
+    color: black;
+    border: 1px solid #2C3434;
+    filter: drop-shadow(0px 64px 95.85px rgba(58, 58, 58, 0.2));
+    border-radius: 100px;
+    padding: 5px 15px;
+    font-size: 13px;
+}
+
+/* .back-txt {
+    margin-left: 5px;
+} */
+
+.score-container {
+    color: white;
+    background-color: #34882C;
+    height: 170px;
+    width: 170px;
+    border-radius: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    grid-row: 1/2;
+    margin: 20px 20px;
+}
+
+.summary-container {
+    color: black;
+    font-size: 20px;
+    height: 170px;
+    width: 500px;
+    overflow-wrap: break-word;
+    border-radius: 50px;
+    grid-row: 1/2;
+    margin: 20px 10px;
+}
+
+.meal-row {
+    display: grid;
+    gap: 20px;
+    box-shadow: 0px 64px 95.85px rgba(58, 58, 58, 0.2);
+    border-radius: 50px;
+}
+
+h1 {
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+
+.your-food-txt {
+    margin-top: 75px;
+    font-size: 30px;
+}
+
+.food-grid-container {
+
+}
+.food-row {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.food-grid {
+    background-color: white;
+    box-shadow: 0px 10px 20px rgba(58, 58, 58, 0.2);
+    border-radius: 25px;
+    height: 200px;
+    width: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row: 1/2;
+}
+
+.food-txt {
+    font-size: 50px;
+}
+
+
+.article-summary-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+.article-summary-container {
+    background-color: white;
+    box-shadow: 0px 10px 20px rgba(58, 58, 58, 0.2);
+    border-radius: 25px;
+    height: 200px;
+    width: 700px;
+    margin-bottom: 20px;
+}
+
+.article-summary {
+    margin: 20px 20px;
+}
