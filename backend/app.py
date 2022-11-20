@@ -15,11 +15,10 @@ def get_foods(foods):
     food_array = data.split('+')
     summaries = web_scraper(food_array)
     return summaries
+
+@app.route('/api/score/<foods>')
+def get_score(foods):
+    data = foods 
+    food_array = data.split('+')
     
-@app.route('/api', methods=['POST'])
-def post_data(foods):
-    data = request.get_json()
-    result = web_scraper(data['foods'])
-    return jsonify(data)    
-if __name__ == '__main__':
-    app.run(port=5000)
+    
