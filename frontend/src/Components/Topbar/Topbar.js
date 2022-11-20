@@ -1,10 +1,14 @@
 import './Topbar.css';
 
-export default function Topbar() {
+const Topbar = () => {
     return (
-      <div className="topbar">
-        <h2 className="logo">Healthsimple</h2>
-        <a className="top-btn" href="/add">Get started</a>
-      </div>
+      <>
+        <div className="topbar">
+          <h2 className="logo">Healthsimple</h2>
+          <a className="top-btn" href="/add">Get started</a>
+        </div>
+      </>
     );
 }
+
+export default Topbar;

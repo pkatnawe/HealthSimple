@@ -13,19 +13,6 @@
   }
 }
 
-h1 {
-  font-size: 93px;
-  margin-bottom: 12px;
-}
-
-h3 {
-  font-size: 30px;
-  max-width: 520px;
-  margin: 0 0;
-  margin-bottom: 22px;
-  font-weight: 400;
-}
-
 button {
   background-color: transparent;
   border-width: 0;

@@ -1,4 +1,4 @@
-import "./Landing.css";
+import "./LandingPage.css";
 import landing from "../../landing.png";
 import Topbar from "../Topbar/Topbar";
 import { Link } from "react-router-dom";
@@ -18,8 +18,8 @@ const Landing = () => {
       >
         <header className="App-header">
           <Topbar></Topbar>
-          <h1>Do health right</h1>
-          <h3>Search your ingredients and such and get your health info.</h3>
+          <h1 className="landing-title">Do health right</h1>
+          <h3 className="landing-sub-title">Search your ingredients and such and get your health info.</h3>
           <Link className="btn" to="/add">
             Get started
           </Link>

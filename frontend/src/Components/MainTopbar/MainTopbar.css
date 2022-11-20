@@ -1,0 +1,19 @@
+.logo {
+    font-size: 26px;
+    font-weight: 900;
+    margin: 0 0 0 13px;
+    align-self: center;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.topbar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: white;
+    width: 100vw;
+    display: flex;
+    align-items: flex-start;
+}

@@ -13,12 +13,12 @@
     }
   }
   
-  h1 {
+  .landing-title {
     font-size: 93px;
     margin-bottom: 12px;
   }
   
-  h3 {
+  .landing-sub-title {
     font-size: 30px;
     max-width: 520px;
     margin: 0 0;
