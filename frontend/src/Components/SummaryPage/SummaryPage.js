@@ -1,22 +1,59 @@
 import { useLocation } from 'react-router-dom';
 import MainTopbar from '../MainTopbar/MainTopbar';
 import './SummaryPage.css';
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const SummaryPage = () => {
     const location = useLocation();
     const ingredientInfo = location.state.ingredientInfo;
-    const mealInfo = location.state.mealInfo;
+    // const mealInfo = location.state.mealInfo;
+    const url = location.state.url;
+    let [mealGrade, setMealGrade] = useState('');
+    let [color, setColor] = useState('')
+    let [mealInfo, setMealInfo] = useState('')
+
+    const helpMe = (data) => {
+        setMealGrade(data)
+        if (data === 'A') {
+            setColor('green')
+        } else if (data === 'B') {
+            setColor('MediumTurquoise')
+        } else if (data === 'C') {
+            setColor('orange')
+            
+        } else if (data === 'D') {
+            setColor('red')
+        }
+        console.log(color)
+    }
+    useEffect(() => {
+        axios
+          .get(`http://localhost:5000/api/score/${url}`, { mode: "cors" })
+          .then((res) =>  helpMe(res.data))
+          .then((res) => console.log(mealGrade))
+          .catch((err) => console.log(err));
+    }, []);
+
+    useEffect(() => {
+        axios
+          .get(`http://localhost:5000/api/data/${url}`, { mode: "cors" })
+          .then((res) => {setMealInfo(res.data.split('Answer:')[1].replace('--', ''));
+        console.log(res)})
+          .catch((err) => console.log(err));
+    }, []);
+
 
 
     const mealHTML = () => {
         return (
             <div className="meal-row">
-                        <div className="score-container">
-                            <div className="score">{mealInfo.score}</div>
+                        <div className="score-container" style={{backgroundColor: color}}>
+                            <div className="score">{mealGrade}</div>
                         </div>
                         <div className="summary-container">
                             <div className="summary">
-                                {mealInfo.info}
+                                {mealInfo}
                             </div>
                         </div>
             </div>
@@ -36,7 +73,15 @@ const SummaryPage = () => {
         );
     })
 
-    
+    // const loading = () => {
+    //     if (pageLoading) {
+    //         return (
+    //             <h1 className='loading'>cmon co:here YOU GOT THISSS</h1>
+    //         )
+    //     }
+    // }
+
+
     return (
         <>
             <MainTopbar></MainTopbar>
@@ -64,7 +109,7 @@ const SummaryPage = () => {
                         <div className="article-summary-container">
                             <div className="article-summary">
                                 <h2 className="article-title">
-                                <i className="fa-solid fa-chevron-right"></i> Goddamn I'm such a good cs student holy fuck
+                                <i className="fa-solid fa-chevron-right"></i> Research shows that staying up late for hackathons might not be sustainable
                                 </h2>
                                 A compiler is a tool that takes code as input and produces error messages. As a side-effect, it may produce an executable.
                                 A compiler is a tool that takes code as input and produces error messages. As a side-effect, it may produce an executable.
@@ -75,7 +120,7 @@ const SummaryPage = () => {
                         <div className="article-summary-container">
                             <div className="article-summary">
                                 <h2 className="article-title">
-                                <i className="fa-solid fa-chevron-right"></i> Goddamn I'm such a good cs student holy fuck
+                                <i className="fa-solid fa-chevron-right"></i> why uoft might be better than the university of ...
                                 </h2>
                                 A compiler is a tool that takes code as input and produces error messages. As a side-effect, it may produce an executable.
                                 A compiler is a tool that takes code as input and produces error messages. As a side-effect, it may produce an executable.
@@ -91,6 +136,8 @@ const SummaryPage = () => {
             </div>
         </>
     );
+    
+
 };
 
 export default SummaryPage;

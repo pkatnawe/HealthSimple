@@ -52,22 +52,45 @@ const AddPage = () => {
     }
 
     const handleCompute = () => {
+        const url = foods.join('+');
         if (foods.length > 0) {
-            const ingredientInfo = [
-                {name: 'kale1', info: `A compiler is a tool that takes code as input and produces error messages. As a side-effect, it may produce an executable.
-                A compiler is a tool that takes code as input`},
-                {name: 'kale2', info: `A compiler is a tool that takes code as input and produces error messages. As a side-effect, it may produce an executable.
-                A compiler is a tool that takes code as input`},
-                {name: 'kale3', info: `A compiler is a tool that takes code as input and produces error messages. As a side-effect, it may produce an executable.
-                A compiler is a tool that takes code as input`},
-                {name: 'kale4', info: `A compiler is a tool that takes code as input and produces error messages. As a side-effect, it may produce an executable.
-                A compiler is a tool that takes code as input`},
-            ];
-            const mealInfo = {score: 99, info: `A compiler is a tool that takes code as input and produces error messages. As a side-effect, it may produce an executable.
-            A compiler is a tool that takes code as input`};
-            navigate('/summary', {state: {ingredientInfo,  mealInfo}});
+
+            // const requestOptions = {
+            //     method: 'GET',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     mode: 'cors',
+            // };
+            // fetch(`http://localhost:5000/api/score/kale`, requestOptions)
+            //     .then(response => console.log(response.data, 'hiii'))
+            //     .then( () => {
+            //         const ingredientInfo = [
+            //             {name: 'kale1', info: `A compiler is a tool that takes code as input and produces error messages. As a side-effect, it may produce an executable.
+            //             A compiler is a tool that takes code as input`},
+            //             {name: 'kale2', info: `A compiler is a tool that takes code as input and produces error messages. As a side-effect, it may produce an executable.
+            //             A compiler is a tool that takes code as input`},
+            //             {name: 'kale3', info: `A compiler is a tool that takes code as input and produces error messages. As a side-effect, it may produce an executable.
+            //             A compiler is a tool that takes code as input`},
+            //             {name: 'kale4', info: `A compiler is a tool that takes code as input and produces error messages. As a side-effect, it may produce an executable.
+            //             A compiler is a tool that takes code as input`},
+            //         ];
+            //         const mealInfo = {score: 99, info: `A compiler is a tool that takes code as input and produces error messages. As a side-effect, it may produce an executable.
+            //         A compiler is a tool that takes code as input`};
+            //         navigate('/summary', {state: {ingredientInfo,  mealInfo, url}});
+            //         setFoods([]);
+            //         setNewFood('');
+            //     }
+            //     )
+            const ingredientInfo = []
+            for (let i=0; i<foods.length; i++ ){
+                ingredientInfo.push({name: foods[i], info: `A compiler is a tool that takes code as input and produces error messages. As a side-effect, it may produce an executable.
+                A compiler is a tool that takes code as input`})
+            }
+            const mealInfo = {score: 99, info: `If you've never programmed a computer, you should. There's nothing like it in the whole world. When you program a computer, it does exactly what you tell it to do.`};
+            navigate('/summary', {state: {ingredientInfo,  mealInfo, url}});
             setFoods([]);
             setNewFood('');
+
+
         }
     }
 

@@ -6,6 +6,7 @@
     background-color: #F5F5F5;
 }
 
+
 .sub-container {
     min-width: 700px;
     margin-top: 100px;
@@ -16,10 +17,9 @@
 
 .score-container {
     color: white;
-    background-color: #34882C;
     height: 170px;
     width: 170px;
-    border-radius: 70px;
+    border-radius: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,6 +46,7 @@
     gap: 20px;
     box-shadow: 0px 64px 95.85px rgba(58, 58, 58, 0.2);
     border-radius: 50px;
+    background-color: white;
 }
 
 h1 {
