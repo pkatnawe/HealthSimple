@@ -6,7 +6,7 @@ import sys
 import cohere
 
 
-good_cal = 745
+good_cal = 730
 good_protein = 0.4
 good_fat = 0.4
 good_carb = 0.2
