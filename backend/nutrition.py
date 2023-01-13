@@ -6,7 +6,7 @@ import sys
 import cohere
 
 
-good_cal = 750
+good_cal = 745
 good_protein = 0.4
 good_fat = 0.4
 good_carb = 0.2
@@ -37,18 +37,10 @@ def search_food(query):
 
 def create_data(name) :
     foods = search_food(name)
-    #foods = json.load(foods)
     names = name
-    #print(foods.keys())
-    #print(foods['hints'])
     data = foods['hints'][0]
-    # #print(data.keys())
     data_food = data['food']
-    # data_measures = data['measures']
-    # #print(data_food) 
-    #print(data_food.keys())
     nutrients = data_food['nutrients']
-    #print(nutrients)
     calories = nutrients["ENERC_KCAL"]
     protein = nutrients["PROCNT"]
     fat = nutrients["FAT"]
